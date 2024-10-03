@@ -1,1 +1,2 @@
-# FAN
+# FAN: Fourier Analysis Networks
+
