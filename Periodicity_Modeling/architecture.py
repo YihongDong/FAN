@@ -40,7 +40,7 @@ class FANLayer(nn.Module):
 @register_model('FANLayerGated')
 class FANLayerGated(nn.Module):
     def __init__(self, input_dim, output_dim, gated = True):
-        super(FANLayer, self).__init__()
+        super(FANLayerGated, self).__init__()
         self.input_linear_p = nn.Linear(input_dim, output_dim//4)
         self.input_linear_g = nn.Linear(input_dim, (output_dim-output_dim//2))
         self.activation = nn.GELU()        
