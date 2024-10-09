@@ -37,7 +37,7 @@ t_tensor = torch.tensor(t).float().unsqueeze(1)
 data_tensor = torch.tensor(data).float().unsqueeze(1)  
 dataset = TensorDataset(t_tensor, data_tensor)
 
-dataloader_train = DataLoader(dataset, batch_size=BATCHSIZE, shuffle=True)  # 设置批处理大小为32，并且每个epoch都打乱数据
+dataloader_train = DataLoader(dataset, batch_size=BATCHSIZE, shuffle=True) 
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
