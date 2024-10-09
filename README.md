@@ -3,6 +3,12 @@
 
 The code will be uploaded as soon as possible within a week!
 
+## Periodicity Modeling
+```bash
+cd Periodicity_Modeling
+bash ./run.sh
+```
+
 ## Citation
 ```
 @article{dong2024fan,
