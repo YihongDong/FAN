@@ -32,10 +32,9 @@ class FANLayer(nn.Module):
     
     def forward(self, src):
         g = self.activation(self.input_linear_g(src))
-        p_s = torch.sin(self.input_linear_p(src))
-        p_c = torch.cos(self.input_linear_p(src))
+        p = self.input_linear_p(src)
         
-        output = torch.cat((g, p_s, p_c), dim=-1)
+        output = torch.cat((torch.cos(p), torch.sin(p), g), dim=-1)
         return output
     
 @register_model('FANLayerGated')
@@ -50,14 +49,13 @@ class FANLayerGated(nn.Module):
     
     def forward(self, src):
         g = self.activation(self.input_linear_g(src))
-        p_s = torch.sin(self.input_linear_p(src))
-        p_c = torch.cos(self.input_linear_p(src))
+        p = self.input_linear_p(src)
         
         if not hasattr(self, 'gate'):
-            output = torch.cat((g, p_s, p_c), dim=-1)
+            output = torch.cat((torch.cos(p), torch.sin(p), g), dim=-1)
         else:
             gate = torch.sigmoid(self.gate)
-            output = torch.cat(((1-gate)*g, gate*p_s, gate*p_c), dim=-1)
+            output = torch.cat((gate*torch.cos(p), gate*torch.sin(p), (1-gate)*g), dim=-1)
         return output
 
 @register_model('FAN')
