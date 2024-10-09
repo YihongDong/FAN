@@ -12,7 +12,7 @@ def gen_periodic_data(periodic_type):
                 t = np.linspace(-num_periods * np.pi, num_periods * np.pi, num_samples)
             else:
                 t = np.linspace(-num_periods * 3 * np.pi, num_periods * 3 * np.pi, num_samples)
-            data = np.sin(t)  # 使用正弦函数
+            data = np.sin(t) 
             return t, data
         print(f'generate data from the {periodic_type} function')
 
