@@ -9,6 +9,15 @@ cd Periodicity_Modeling
 bash ./run.sh
 ```
 
+## Sentiment Analysis
+The data can be automatically downloaded using the Huggingface Datasets `load_dataset` function in the `./Sentiment_Analysis/get_dataloader.py`. 
+
+```bash
+cd Sentiment_Analysis
+bash scripts/Trans_with_FAN/train_ours.sh
+bash scripts/Trans_with_FAN/test_ours.sh
+```
+
 ## Citation
 ```
 @article{dong2024fan,
