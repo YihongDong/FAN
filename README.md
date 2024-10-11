@@ -4,7 +4,7 @@
 The code will be uploaded as soon as possible within a week!
 
 ## Periodicity Modeling
-```bash
+```shell
 cd Periodicity_Modeling
 bash ./run.sh
 ```
@@ -12,10 +12,18 @@ bash ./run.sh
 ## Sentiment Analysis
 The data can be automatically downloaded using the Huggingface Datasets `load_dataset` function in the `./Sentiment_Analysis/get_dataloader.py`. 
 
-```bash
+```shell
 cd Sentiment_Analysis
 bash scripts/Trans_with_FAN/train_ours.sh
 bash scripts/Trans_with_FAN/test_ours.sh
+```
+
+## Timeseries Forecasting
+You can obtain data from [Google Drive](https://drive.google.com/drive/folders/1ZOYpTUa82_jCcxIdTmyr0LXQfvaM9vIy?usp=sharing). All the datasets are well pre-processed and can be used easily.
+
+```shell
+cd Timeseries_Forecasting
+bash scripts/Weather_script/Modified_Transformer.sh 
 ```
 
 ## Citation
