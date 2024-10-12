@@ -26,6 +26,13 @@ cd Timeseries_Forecasting
 bash scripts/Weather_script/Modified_Transformer.sh 
 ```
 
+## Symbolic Formula Representation
+```shell
+cd Symbolic_Formula_Representation
+python gen_dataset.py
+bash run_train_fan.sh
+```
+
 ## Citation
 ```
 @article{dong2024fan,
