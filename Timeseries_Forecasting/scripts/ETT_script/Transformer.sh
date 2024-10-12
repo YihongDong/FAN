@@ -1,6 +1,6 @@
 export CUDA_VISIBLE_DEVICES=0
 
-datasets=("ETTh1")
+datasets=("ETTh")
 pred_lens=(96 192 336 720)
 model="Transformer"
 exp_setting=0
