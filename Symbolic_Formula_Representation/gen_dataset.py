@@ -1,3 +1,5 @@
+# The Code of this part is based on KAN (https://github.com/KindXiaoming/pykan).
+
 import torch
 import scipy.special
 import numpy as np
