@@ -22,7 +22,7 @@ def main():
     parser.add_argument('--model', type=str, required=True, default='Transformer')
 
     # data loader
-    parser.add_argument('--data', type=str, required=True, default='ETTm1', help='dataset type')
+    parser.add_argument('--data', type=str, required=True, default='ETTh', help='dataset type')
     parser.add_argument('--root_path', type=str, default='./data/ETT/', help='root path of the data file')
     parser.add_argument('--data_path', type=str, default='ETTh.csv', help='data file')
     parser.add_argument('--features', type=str, default='M',
