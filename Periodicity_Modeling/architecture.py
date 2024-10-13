@@ -115,9 +115,8 @@ class MLPModel(nn.Module):
 
 class RoPEPositionalEncoding(torch.nn.Module):
 
-    def __init__(self, d_model: int, dropout: float = 0.1, max_len: int = 5000):
+    def __init__(self, d_model: int, max_len: int = 5000):
         super().__init__()
-        self.dropout = torch.nn.Dropout(p=dropout)
 
         position = torch.arange(max_len).unsqueeze(1)
         div_term = torch.exp(torch.arange(0, d_model, 2) * (-math.log(10000.0) / d_model))
@@ -132,7 +131,7 @@ class RoPEPositionalEncoding(torch.nn.Module):
             x: Tensor, shape ``[seq_len, batch_size, embedding_dim]``
         """
         x = x + self.pe[:x.size(0)]
-        return self.dropout(x)
+        return x
 
 
 @register_model('Transformer')
