@@ -31,9 +31,9 @@ def load_dataset(args, dataset_idx):
 
 
 class FANLayer(nn.Module):
-    def __init__(self, input_dim, output_dim):
+    def __init__(self, input_dim, output_dim, bias=True):
         super(FANLayer, self).__init__()
-        self.input_linear_p = nn.Linear(input_dim, output_dim//4)
+        self.input_linear_p = nn.Linear(input_dim, output_dim//4, bias=bias)
         self.input_linear_g = nn.Linear(input_dim, (output_dim-output_dim//2))
         self.activation = nn.GELU()        
     

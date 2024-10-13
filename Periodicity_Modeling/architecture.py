@@ -24,9 +24,9 @@ def get_model_by_name(model_name, *args, **kwargs):
 
 @register_model('FANLayer')
 class FANLayer(nn.Module):
-    def __init__(self, input_dim, output_dim):
+    def __init__(self, input_dim, output_dim, bias=True):
         super(FANLayer, self).__init__()
-        self.input_linear_p = nn.Linear(input_dim, output_dim//4)
+        self.input_linear_p = nn.Linear(input_dim, output_dim//4, bias=bias) # There is almost no difference between bias and non-bias in our experiments.
         self.input_linear_g = nn.Linear(input_dim, (output_dim-output_dim//2))
         self.activation = nn.GELU()        
     
@@ -39,9 +39,9 @@ class FANLayer(nn.Module):
     
 @register_model('FANLayerGated')
 class FANLayerGated(nn.Module):
-    def __init__(self, input_dim, output_dim, gated = True):
+    def __init__(self, input_dim, output_dim, bias=True, gated = True):
         super(FANLayerGated, self).__init__()
-        self.input_linear_p = nn.Linear(input_dim, output_dim//4)
+        self.input_linear_p = nn.Linear(input_dim, output_dim//4, bias=bias) 
         self.input_linear_g = nn.Linear(input_dim, (output_dim-output_dim//2))
         self.activation = nn.GELU()        
         if gated:

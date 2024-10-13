@@ -3,9 +3,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class FANLayer(nn.Module):
-    def __init__(self, input_dim, output_dim, with_gate = True):
+    def __init__(self, input_dim, output_dim, bias=True, with_gate = True):
         super(FANLayer, self).__init__()
-        self.input_linear_p = nn.Linear(input_dim, output_dim//4)
+        self.input_linear_p = nn.Linear(input_dim, output_dim//4, bias=bias)
         self.input_linear_g = nn.Linear(input_dim, (output_dim-output_dim//2))
         self.activation = nn.GELU()        
         if with_gate:
