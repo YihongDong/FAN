@@ -1,13 +1,13 @@
 # FAN: Fourier Analysis Networks
 [**Paper**](https://arxiv.org/abs/2410.02675)
 
-![FAN Layer](./img/FANLayer.jpg)
+<img src="./img/FANLayer.jpg" width="705" alt="FAN Layer">
 
 |                           | MLP Layer                                                |  FAN layer                                                                 |
-|---------------------------|----------------------------------------------------------|----------------------------------------------------------------------------------|
+|---------------------------|:----------------------------------------------------------:|:------------------------------------------------------------------------:|
 | **Formula**                | $\Phi(x) = \sigma(B_{m} + W_{m}x)$                       | $\phi(x) = [\cos(W_px)\|\| \sin(W_px)\|\| \sigma(B_{\bar{p}} + W_{\bar{p}}x)]$       |
 | **Num of Params**          | $(d_\text{input} \times d_\text{output}) + d_\text{output}$ | $(1-\frac{d_p}{d_\text{output}})\times((d_\text{input} \times d_\text{output}) + d_\text{output})$ |
-| **FLOPs**                  | $2\times(d_\text{input} \times d_\text{output})+ \text{FLOPs}_\text{non-linear} \times d_\text{output}$ | $(1-\frac{d_p}{d_\text{output}})\times2\times(d_\text{input} \times d_\text{output})+ \text{FLOPs}_\text{non-linear} \times d_\text{output}$ |
+| **FLOPs**                  | $2\times(d_\text{input} \times d_\text{output})$<br> $+ d_\text{output} \times \text{FLOPs}_\text{non-linear}$ | $(1-\frac{d_p}{d_\text{output}})\times(2\times(d_\text{input} \times d_\text{output}))$ <br> $+ d_\text{output} \times \text{FLOPs}_\text{non-linear} $ |
 
 
 ## Periodicity Modeling
