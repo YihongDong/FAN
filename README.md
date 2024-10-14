@@ -1,13 +1,23 @@
 # FAN: Fourier Analysis Networks
 [**Paper**](https://arxiv.org/abs/2410.02675)
 
-![The performance of different neural networks within and outside the domain of their training data for the sine function, where x is a scalar variable.](./img/intro.jpg)
+![FAN Layer](./img/FANLayer.jpg)
+
+|                           | MLP Layer                                                |  FAN layer                                                                 |
+|---------------------------|----------------------------------------------------------|----------------------------------------------------------------------------------|
+| **Formula**                | $\Phi(x) = \sigma(B_{m} + W_{m}x)$                       | $\phi(x) = [\cos(W_px)\|\| \sin(W_px)\|\| \sigma(B_{\bar{p}} + W_{\bar{p}}x)]$       |
+| **Num of Params**          | $(d_\text{input} \times d_\text{output}) + d_\text{output}$ | $(1-\frac{d_p}{d_\text{output}})\times((d_\text{input} \times d_\text{output}) + d_\text{output})$ |
+| **FLOPs**                  | $2\times(d_\text{input} \times d_\text{output})$ <br> $+ \text{FLOPs}_\text{non-linear} \times d_\text{output}$ | $(1-\frac{d_p}{d_\text{output}})\times2\times(d_\text{input} \times d_\text{output})$ <br> $+ \text{FLOPs}_\text{non-linear} \times d_\text{output}$ |
+
 
 ## Periodicity Modeling
 ```shell
 cd Periodicity_Modeling
 bash ./run.sh
 ```
+![sin](./img/sin.jpg)
+![mod](./img/mod.jpg)
+
 
 ## Sentiment Analysis
 The data can be automatically downloaded using the Huggingface Datasets `load_dataset` function in the `./Sentiment_Analysis/get_dataloader.py`. 
