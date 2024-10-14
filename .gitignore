@@ -1,0 +1,30 @@
+# Ignore all files with .log extension
+*.log
+
+# Ignore directories
+node_modules/
+dist/
+
+# Ignore OS or IDE specific files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Ignore environment variables or sensitive information
+.env
+
+# Ignore compiled files or caches
+*.class
+*.pyc
+__pycache__/
+
+# Ignore dependency directories for different programming languages
+# Python
+venv/
+# Ruby
+.bundle/
+# Java
+target/
+
+# Ignore specific files
+config.json
