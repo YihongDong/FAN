@@ -1,7 +1,7 @@
 # FAN: Fourier Analysis Networks
 [**Paper**](https://arxiv.org/abs/2410.02675)
 
-![The performance of different neural networks within and outside the domain of their training data for the sine function, where x is a scalar variable.](./img/intro.pdf)
+![The performance of different neural networks within and outside the domain of their training data for the sine function, where x is a scalar variable.](./img/intro.jpg)
 
 ## Periodicity Modeling
 ```shell
