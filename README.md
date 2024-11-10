@@ -43,6 +43,16 @@ python gen_dataset.py
 bash run_train_fan.sh
 ```
 
+## Image Recognition
+We update the results on image recognition tasks and the detailed setup can be found in the Appendix of our latest-version paper.
+
+```shell
+cd Image_Recognition
+bash run_image_recognition.sh
+```
+
+![Image recognition tasks](./img/IR.jpg)
+
 ## Citation
 ```
 @article{dong2024fan,
