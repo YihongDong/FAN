@@ -85,8 +85,10 @@ class CNNModel(nn.Module):
 
 
 device = torch.device(f"cuda:{args.gpu_id}" if torch.cuda.is_available() else "cpu")
+
 model = CNNModel()
 model.to(device)
+
 num_epochs = args.epoch
 
 def run(model, train_loader, OOD_test_loader, test_loader, num_epochs, name):
