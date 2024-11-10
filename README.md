@@ -44,12 +44,11 @@ bash run_train_fan.sh
 ```
 
 ## Image Recognition
-We update the results on image recognition tasks and the detailed setup can be found in the Appendix of our latest-version paper.
-
 ```shell
 cd Image_Recognition
 bash run_image_recognition.sh
 ```
+We update the results on image recognition tasks and the detailed setup can be found in the Appendix of our latest-version paper.
 
 ![Image recognition tasks](./img/IR.jpg)
 
