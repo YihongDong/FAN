@@ -2,7 +2,7 @@ GPU=1
 LR=0.01
 Epoch=100
 Versions=(fan mlp)
-Datasets=MNIST #(MNIST MNIST-M Fashion-MNIST Fashion-MNIST-corrupted)
+Dataset=MNIST #(MNIST MNIST-M Fashion-MNIST Fashion-MNIST-corrupted)
 logdirpath=result
 
 if [ ! -d ./${logdirpath} ]; then
