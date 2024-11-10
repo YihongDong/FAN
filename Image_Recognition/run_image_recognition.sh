@@ -10,7 +10,7 @@ if [ ! -d ./${logdirpath} ]; then
 fi
 
 for Version in "${Versions[@]}"; do
-    path=${Version}_lr${LR}_seed${Seed}
+    path=${Version}
 
     echo "正在运行 ${path}..."
     python3 -u ./test_image_recognition.py \
