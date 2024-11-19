@@ -23,4 +23,4 @@ for Version in "${Versions[@]}"; do
 done
 
 wait
-
+echo "End."
