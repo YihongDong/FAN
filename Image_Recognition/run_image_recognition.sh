@@ -12,7 +12,7 @@ fi
 for Version in "${Versions[@]}"; do
     path=${Version}
 
-    echo "正在运行 ${path}..."
+    echo "running ${path}..."
     python3 -u ./test_image_recognition.py \
     --gpu_id ${GPU} \
     --lr ${LR} \
