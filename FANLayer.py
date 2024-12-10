@@ -36,7 +36,7 @@ class FANLayer(nn.Module):
         if isinstance(activation, str):
             self.activation = getattr(F, activation)
         else:
-            self.activation = activation
+            self.activation = activation if activation else lambda x: x
 
     def forward(self, src):
         """
