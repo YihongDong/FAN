@@ -7,6 +7,36 @@ from exp.exp_main import Exp_Main
 import random
 import numpy as np
 
+def get_setting_str(args, exp_iter):
+    setting = [
+        'expset{}'.format(args.exp_setting),
+        '{}'.format(args.model_id),
+        '{}'.format(args.model),
+        '{}'.format(args.data),
+        'bs{}'.format(args.batch_size),
+        'drop{}'.format(args.dropout),
+        'lr{}'.format(args.learning_rate),
+        'ep{}'.format(args.train_epochs),
+        'pat{}'.format(args.patience),
+        'ft{}'.format(args.features),
+        'sl{}'.format(args.seq_len),
+        'll{}'.format(args.label_len),
+        'pl{}'.format(args.pred_len),
+        'dm{}'.format(args.d_model),
+        'nh{}'.format(args.n_heads),
+        'el{}'.format(args.e_layers),
+        'dl{}'.format(args.d_layers),
+        'df{}'.format(args.d_ff),
+        'fc{}'.format(args.factor),
+        'eb{}'.format(args.embed),
+        'dt{}'.format(args.distil),
+        '{}'.format(args.des),
+        '{}'.format(exp_iter)
+    ]
+    setting = '_'.join(setting)
+                
+    return setting
+
 
 def main():
     fix_seed = 2021
@@ -97,25 +127,7 @@ def main():
 
     if args.is_training:
         for ii in range(args.itr):
-            # setting record of experiments
-            setting = 'expset{}_{}_{}_{}_ft{}_sl{}_ll{}_pl{}_dm{}_nh{}_el{}_dl{}_df{}_fc{}_eb{}_dt{}_{}_{}'.format(
-                args.exp_setting,
-                args.model_id,
-                args.model,
-                args.data,
-                args.features,
-                args.seq_len,
-                args.label_len,
-                args.pred_len,
-                args.d_model,
-                args.n_heads,
-                args.e_layers,
-                args.d_layers,
-                args.d_ff,
-                args.factor,
-                args.embed,
-                args.distil,
-                args.des, ii)
+            setting = get_setting_str(args, ii)
 
             exp = Exp(args)  # set experiments
             print('>>>>>>>start training : {}>>>>>>>>>>>>>>>>>>>>>>>>>>'.format(setting))
@@ -130,24 +142,8 @@ def main():
 
             torch.cuda.empty_cache()
     else:
-        ii = 0
-        setting = 'expset{}_{}_{}_{}_ft{}_sl{}_ll{}_pl{}_dm{}_nh{}_el{}_dl{}_df{}_fc{}_eb{}_dt{}_{}_{}'.format(args.exp_setting,
-                                                                                                      args.model_id,
-                                                                                                      args.model,
-                                                                                                      args.data,
-                                                                                                      args.features,
-                                                                                                      args.seq_len,
-                                                                                                      args.label_len,
-                                                                                                      args.pred_len,
-                                                                                                      args.d_model,
-                                                                                                      args.n_heads,
-                                                                                                      args.e_layers,
-                                                                                                      args.d_layers,
-                                                                                                      args.d_ff,
-                                                                                                      args.factor,
-                                                                                                      args.embed,
-                                                                                                      args.distil,
-                                                                                                      args.des, ii)
+        ii = 0                                                                                  
+        setting = get_setting_str(args, ii)
 
         exp = Exp(args)  # set experiments
         print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
