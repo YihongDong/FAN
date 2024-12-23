@@ -29,7 +29,8 @@ DROP_OUT=0.05
 lr=1e-5
 EPOCHS=10
 PATIENCE=3
-EXP_SETTING=4 # baseline: 0, FANGated: 2, FAN: 4
+# Transformer(baseline): 0, FANGated: 2, FAN: 4
+EXP_SETTING=4 
 
 for PRED_LEN in 96 192 336 720
 do
