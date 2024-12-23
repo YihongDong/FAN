@@ -23,9 +23,14 @@ DEC_IN=21
 C_OUT=21
 DES="Exp"
 ITR=1
-EXP_SETTING=4 #(FANGated:2, FAN:4)
 
-# 96 192 336 720
+BATCH_SIZE=256
+DROP_OUT=0.05
+lr=1e-5
+EPOCHS=10
+PATIENCE=3
+EXP_SETTING=4 # baseline: 0, FANGated: 2, FAN: 4
+
 for PRED_LEN in 96 192 336 720
 do
     MODEL_ID="weather_${SEQ_LEN}_${PRED_LEN}"
@@ -48,5 +53,10 @@ do
         --c_out $C_OUT \
         --des $DES \
         --itr $ITR \
-        --exp_setting $EXP_SETTING # >logs/LongForecasting/$MODEL'_'$MODEL_ID'_'exp_setting_$EXP_SETTING.log 2>&1
+        --batch_size $BATCH_SIZE \
+        --dropout $DROP_OUT \
+        --learning_rate $lr \
+        --train_epochs $EPOCHS \
+        --patience $PATIENCE \
+        --exp_setting $EXP_SETTING # > logs/LongForecasting/$MODEL'_'$MODEL_ID'_'exp_setting_$EXP_SETTING.log 2>&1
 done
