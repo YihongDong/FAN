@@ -57,7 +57,10 @@ class EncoderLayer(nn.Module):
         x = x + self.dropout(new_x)
 
         y = x = self.norm1(x)
-        y = self.dropout(self.activation(self.mlp1(y)))
+        if self.exp_setting == 0:
+            y = self.dropout(self.activation(self.mlp1(y)))
+        else:
+            y = self.dropout(self.mlp1(y))
         y = self.dropout(self.mlp2(y))
 
         return self.norm2(x + y), attn
@@ -128,7 +131,10 @@ class DecoderLayer(nn.Module):
         )[0])
 
         y = x = self.norm2(x)
-        y = self.dropout(self.activation(self.mlp1(y)))
+        if self.exp_setting == 0:
+            y = self.dropout(self.activation(self.mlp1(y)))
+        else:
+            y = self.dropout(self.mlp1(y))
         y = self.dropout(self.mlp2(y))
 
         return self.norm3(x + y)
