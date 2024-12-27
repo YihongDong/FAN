@@ -30,5 +30,14 @@ class CustomBertClassifier(BertForSequenceClassification):
         super(CustomBertClassifier, self).__init__(config)
         if replace_ffn: # replace the two linear layers in FFN for each layer
             for layer in self.bert.encoder.layer:
-                layer.intermediate.dense = FANLayer(config.hidden_size, config.intermediate_size, with_gate=with_gate)
+                layer.intermediate = BertIntermediate_withFAN(config) # replace the intermediate layer because we don't need the activation function within the bert intermediate layer, which is already implemented in the FANLayer
                 layer.output.dense = FANLayer(config.intermediate_size, config.hidden_size, with_gate=with_gate)
+                
+class BertIntermediate_withFAN(nn.Module):
+    def __init__(self, config):
+        super().__init__()
+        self.dense = FANLayer(config.hidden_size, config.intermediate_size, p_ratio=config.p_ratio, with_gate=config.with_gate)
+
+    def forward(self, hidden_states: torch.Tensor) -> torch.Tensor:
+        hidden_states = self.dense(hidden_states)
+        return hidden_states
