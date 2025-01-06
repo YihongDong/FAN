@@ -2,7 +2,7 @@ export CUDA_VISIBLE_DEVICES=0
 
 datasets=("ETTh")
 pred_lens=(96 192 336 720)
-model="Transformer"
+model="Modified_Transformer"
 exp_setting=0
 
 for dataset in "${datasets[@]}"; do

@@ -10,7 +10,7 @@ for pred_len in 96 192 336 720; do
     --root_path ./dataset/exchange_rate/ \
     --data_path exchange_rate.csv \
     --model_id "$model_id" \
-    --model Transformer \
+    --model Modified_Transformer \
     --data custom \
     --features M \
     --seq_len 96 \
@@ -23,5 +23,6 @@ for pred_len in 96 192 336 720; do
     --dec_in 8 \
     --c_out 8 \
     --des 'Exp' \
+    --exp_setting 0 \
     --itr 1 >logs/LongForecasting/exchange_rate/baseline_$model_id.log 2>&1
 done

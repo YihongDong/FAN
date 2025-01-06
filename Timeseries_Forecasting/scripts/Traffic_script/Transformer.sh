@@ -11,7 +11,7 @@ do
     --root_path ./dataset/traffic/ \
     --data_path traffic.csv \
     --model_id $model_id \
-    --model Transformer \
+    --model Modified_Transformer \
     --data custom \
     --features M \
     --seq_len 96 \
@@ -25,5 +25,6 @@ do
     --c_out 862 \
     --des 'Exp' \
     --itr 1 \
+    ----exp_setting 0 \
     --train_epochs $train_epochs >logs/LongForecasting/traffic/baseline_$model_id.log 2>&1
 done
