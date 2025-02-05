@@ -1,6 +1,7 @@
 # FAN: Fourier Analysis Networks
 [**Paper**](https://arxiv.org/abs/2410.02675)
-In our latest version, we have updated the scaling law of using FAN in the standard Transformer and will provide a further comprehensive introduction soon.
+
+In our latest version, we have updated the scaling law of using FAN in LLMs and will provide a further comprehensive introduction soon.
 
 <img src="./img/FANLayer.jpg" width="705" alt="FAN Layer">
 
