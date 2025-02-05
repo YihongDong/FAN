@@ -1,5 +1,6 @@
 # FAN: Fourier Analysis Networks
 [**Paper**](https://arxiv.org/abs/2410.02675)
+In our latest version, we have updated the scaling law of using FAN in the standard Transformer and will provide a further comprehensive introduction soon.
 
 <img src="./img/FANLayer.jpg" width="705" alt="FAN Layer">
 
@@ -48,9 +49,6 @@ bash run_train_fan.sh
 cd Image_Recognition
 bash run_image_recognition.sh
 ```
-We update the results on image recognition tasks and the detailed setup can be found in the Appendix of our latest-version paper.
-
-![Image recognition tasks](./img/IR.jpg)
 
 ## Citation
 ```
