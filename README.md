@@ -1,7 +1,5 @@
 # FAN: Fourier Analysis Networks
-[**Paper**](https://arxiv.org/abs/2410.02675)
-
-In our latest version, we have updated the scaling law of using FAN in LLMs and will provide a further comprehensive introduction soon.
+[![arXiv](https://img.shields.io/badge/arXiv-2410.02675-b31b1b.svg)](https://arxiv.org/abs/2410.02675)
 
 <img src="./img/FANLayer.jpg" width="705" alt="FAN Layer">
 
@@ -20,6 +18,8 @@ bash ./run.sh
 ![sin](./img/sin.jpg)
 ![mod](./img/mod.jpg)
 
+## Scaling Law
+Detailed implementations are available in [![FANformer Repo](https://img.shields.io/badge/GitHub-FANformer-blue)](https://github.com/YihongDong/FANformer).
 
 ## Sentiment Analysis
 The data can be automatically downloaded using the Huggingface Datasets `load_dataset` function in the `./Sentiment_Analysis/get_dataloader.py`. 
