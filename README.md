@@ -1,6 +1,10 @@
 # FAN: Fourier Analysis Networks
 [![arXiv](https://img.shields.io/badge/arXiv-2410.02675-b31b1b.svg)](https://arxiv.org/abs/2410.02675)
 
+Our work reveals that base model architectures (such as MLP and Transformer) struggle in periodic modeling, and proposes Fourier Analysis Network (FAN), a novel neural network that effectively addresses periodicity modeling challenges while offering broad applicability similar to MLP. 
+
+🎉 FAN has been accepted to NeurIPS'25.
+
 <img src="./img/FANLayer.jpg" width="705" alt="FAN Layer">
 
 |                           | MLP Layer                                                |  FAN layer                                                                 |
