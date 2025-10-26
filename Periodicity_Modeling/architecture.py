@@ -113,7 +113,7 @@ class MLPModel(nn.Module):
         return output
 
 
-class RoPEPositionalEncoding(torch.nn.Module):
+class PositionalEncoding(torch.nn.Module):
 
     def __init__(self, d_model: int, max_len: int = 5000):
         super().__init__()
@@ -139,7 +139,7 @@ class TransformerModel(nn.Module):
     def __init__(self, input_dim=1, output_dim=1, hidden_dim=768, num_layers=12, num_heads=12, norm_first = True, encoder_only=True, decoder_only=False):
         super(TransformerModel, self).__init__()
         self.embedding = nn.Linear(input_dim, hidden_dim)
-        self.pos_encoder = RoPEPositionalEncoding(hidden_dim)
+        self.pos_encoder = PositionalEncoding(hidden_dim)
         self.encoder_only = encoder_only
         self.decoder_only = decoder_only
         assert not (self.encoder_only and self.decoder_only)
